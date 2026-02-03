@@ -11,14 +11,7 @@ pipeline {
                 // Run Maven on a Unix agent
                 sh "jmeter -Jjemeter.save.saveservice.output_format=xml -Jjmeter.save.saveservice.response_data.on_error=true -n -t petclinic_test_plan.jmx -l testresult.jlt"
             }
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.war'
-                }
-            }
+
         }
     }
 }
