@@ -11,7 +11,13 @@ pipeline {
                 // Run Maven on a Unix agent
                 sh "jmeter -Jjmeter.save.saveservice.output_format=xml -Jjmeter.save.saveservice.response_data.on_error=true -n -t Plandetest.jmx -l testresult.jlt"
             }
+post {
+always {
+logParser{
 
+
+}
+}
         }
     }
 }
