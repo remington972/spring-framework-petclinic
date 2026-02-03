@@ -49,7 +49,7 @@ pipeline {
         failure {
             script {
                 // Notify GitHub of failure
-                githubNotify description: 'Docker Build Failed', status: 'FAILURE', context: 'jenkins/docker-build'
+                sh "echo ko"
             }
         }
     }
