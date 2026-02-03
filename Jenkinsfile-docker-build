@@ -43,7 +43,7 @@ pipeline {
             script {
                 // Notify GitHub of success
                 // This assumes the GitHub plugin is installed
-                githubNotify description: 'Docker Build Succeeded', status: 'SUCCESS', context: 'jenkins/docker-build'
+                sh "echo ok"
             }
         }
         failure {
